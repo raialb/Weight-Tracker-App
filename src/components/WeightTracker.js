@@ -1,19 +1,29 @@
 import React from "react";
 import {useState} from 'react';
 
-const WeightTracker = ({weight, setWeight}) => {
+const WeightTracker = ({weight, setWeight, entries, setEntry}) => {
     
+    const submitHandler = (e) => {
+        e.preventDefault();
+        setEntry([
+            ... entries, {value: weight, id: Math.random()*1000 }, 
+        ])
+        setWeight("");
+    }
+
+    const setWeightHandler = (e) => {
+        setWeight(e.target.value);
+    }
+
     return (
         <form>
-            <label>
-                Put in how much you weighed today:  
-                <input 
-                    type="number"
-                    required
-                    value={weight}
-                    onChange={(e) => setWeight(e.target.value)}/>lbs
-                <textarea>Please enter numbers only!</textarea>
-            </label>
+            Put in how much you weighed today: (in lbs) 
+            <input type="text" required value={weight} onChange={setWeightHandler}/>
+            <button 
+                onClick={submitHandler} 
+                className="submit-button" 
+                type="submit">Enter
+            </button>
         </form>
     )
 }
