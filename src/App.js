@@ -20,7 +20,7 @@ function App() {
       </header>
       <WeightTracker weight={weight} setWeight={setWeight} 
       entries={entries} setEntry={setEntry} setDate={setDate} entryDate={entryDate}/> 
-      <Entries weight={weight} entries={entries} setDate={setDate} entryDate={entryDate}/>
+      <Entries weight={weight} setEntry={setEntry} entries={entries} setDate={setDate} entryDate={entryDate}/>
     </div>
   );
 }

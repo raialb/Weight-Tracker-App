@@ -30,7 +30,6 @@ const WeightTracker = ({weight, setWeight, entries, setDate, setEntry, postData}
     const setWeightHandler = (e) => {
         setWeight(e.target.value);
     }
-   
     {/*
     const setDateHandler = (e) => {
         console.log(e.target.value); // returns correct date
